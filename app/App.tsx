@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Activity, ArrowUpRight, Check, CheckCircle2, Circle, Command, Compass, Plus, Search, ShieldCheck, Sparkles, Target, Trash2 } from 'lucide-react'
 import { getTasks, removeTask, saveTask, type Task } from './storage'
 
@@ -28,7 +28,7 @@ export default function App() {
   const completed = useMemo(() => tasks.filter((task) => task.completed).length, [tasks])
   const pending = tasks.length - completed
 
-  async function addTask(event: React.FormEvent<HTMLFormElement>) {
+  async function addTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const title = draft.trim()
     if (!title) return
