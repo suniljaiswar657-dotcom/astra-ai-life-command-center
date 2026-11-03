@@ -1,39 +1,42 @@
 # ASTRA — AI Life Command Center
 
-ASTRA is an independent, mobile-first AI platform intended to help people manage personal tasks, planning, research, productivity, and digital workflows from one unified command center.
+ASTRA is an independent, mobile-first personal command center for tasks, planning, research, and productivity.
 
-## Principles
-- Independent repository, architecture, codebase, data, and deployment.
-- Mobile-first experience.
-- Free-tier-first; initial budget target: ₹0.
-- User approval before consequential external actions.
-- Incremental delivery with verification at every milestone.
+## Current MVP
+- React + TypeScript + Vite application shell
+- Responsive mobile-first navigation
+- Local task creation, completion, and deletion
+- IndexedDB persistence in this browser/device
+- PWA manifest and service-worker build integration
 
-## Initial product areas
-1. Personal task and reminder management
-2. Daily and weekly planning
-3. Research and information workspace
-4. Productivity dashboard
-5. Workflow command center
+## Not implemented yet
+- AI/model integration
+- Cloud sync, accounts, or authentication
+- Push notifications or scheduled reminders
+- Research search or external integrations
+- Backup/export and restore
+- Cloudflare Pages deployment
 
-These are planned product areas, not implemented features.
+## Run locally
+Requires Node.js 20.19+ or 22.12+.
 
-## Repository structure
-```text
-.
-├── app/                  # Application implementation (planned)
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── PRODUCT_SCOPE.md
-├── tests/                # Verification assets (planned)
-└── README.md
+```bash
+npm install
+npm run dev
 ```
 
-## Current status
-**Foundation stage.** This repository contains project documentation and structural placeholders only. No application UI, backend, database, AI provider, authentication, or deployment has been configured.
+Production build:
 
-## Technical decisions still open
-Frontend framework, backend/API, database, authentication, AI provider, and hosting will be selected after checking MVP requirements and current free-tier limits.
+```bash
+npm run build
+npm run preview
+```
+
+## Data and privacy
+Tasks are stored locally in this browser using IndexedDB. They are not synced to another device. Clearing browser/site data may permanently remove them. Do not use this preview as the only copy of important information until export/backup is implemented.
+
+## Technology
+See [docs/TECH_STACK.md](docs/TECH_STACK.md) for the approved MVP stack and limitations.
 
 ## Project boundary
-ASTRA must remain separate from all other projects. Do not import or reuse their source code, files, designs, databases, credentials, data, or workflows without explicit permission.
+ASTRA has its own repository, architecture, codebase, and data boundary. Do not reuse or connect another project's assets, code, databases, credentials, or workflows without explicit permission.
